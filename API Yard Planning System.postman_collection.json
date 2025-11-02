@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "e66eb462-ab66-460e-bfca-5adda555281c",
+		"name": "API Yard Planning System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32475904",
+		"_collection_link": "https://personal-team1.postman.co/workspace/My-Workspace~c279392c-1eeb-4a43-82bf-8710695e965b/collection/32475904-e66eb462-ab66-460e-bfca-5adda555281c?action=share&source=collection_link&creator=32475904"
+	},
+	"item": [
+		{
+			"name": "Post Suggestion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"yard\": \"YRD1\",\n    \"container_number\": \"ALFI000001\",\n    \"container_size\": 20,\n    \"container_height\": 8.6,\n    \"container_type\": \"DRY\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/suggestion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"suggestion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data Yards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/yard-plans?yard=YRD1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"yard-plans"
+					],
+					"query": [
+						{
+							"key": "yard",
+							"value": "YRD1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"yard\": \"YRD1\",\n    \"container_number\": \"ALFI000001\",\n    \"block\": \"LC01\",\n    \"slot\": 1,\n    \"row\": 1,\n    \"tier\": 1\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/placement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"placement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pickup Container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"yard\": \"YRD1\",\n    \"container_number\": \"ALFI000001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pickup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pickup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
